@@ -1,0 +1,19 @@
+{%  extends "base.html" %}
+{% block content %}
+<div>
+    {%  for pet in pets  %}
+    <div class="petname">
+        <a href="{% url 'detail' pet.id %}">
+            <h3>{{pet.name}}</h3>
+        </a>
+        <p>{{pet.species}}</p>
+        {% if pet.breed  %}
+            <p>{{pet.breed}}</p>
+        {% endif %}
+        <p class="hidden"> {{pet.description}}</p>
+        
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
